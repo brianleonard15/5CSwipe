@@ -11,10 +11,9 @@
 @interface LoginPage : UIViewController <UIWebViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 - (IBAction)buttonPress:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *idInput;
 @property (strong, nonatomic) IBOutlet UITextField *passwordInput;
-
-
 
 @end

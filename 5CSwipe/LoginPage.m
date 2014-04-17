@@ -8,6 +8,8 @@
 
 #import "LoginPage.h"
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "STKeychain.h"
 
 @interface LoginPage () {
     
@@ -34,16 +36,36 @@ NSString *mealsBalance;
 {
     [super viewDidLoad];
     numberFinishes = 0;
+    self.loginButton.layer.cornerRadius = 5;
+    self.loginButton.layer.borderWidth = 1;
+    self.loginButton.layer.borderColor = [UIColor colorWithRed:0 green:124.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
     self.idInput.delegate = self;
     self.passwordInput.delegate = self;
     self.webView.hidden = YES;
     self.webView.delegate = self;
+    self.idInput.layer.cornerRadius = 8;
+    self.idInput.layer.borderWidth = 1.0f;
+    self.idInput.layer.borderColor = [[UIColor grayColor] CGColor];
+    UIColor *placeholderColor =[UIColor grayColor];
+    self.idInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Student ID" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
+    self.passwordInput.layer.cornerRadius = 8;
+    self.passwordInput.layer.borderWidth = 1.0f;
+    self.passwordInput.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.passwordInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
 
 
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSError *error = nil;
+    NSString *username = @"40155049";
+    self.passwordInput.text = [STKeychain getPasswordForUsername:username andServiceName:@"5CSwipe" error:&error];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +78,12 @@ NSString *mealsBalance;
 
 - (IBAction)buttonPress:(id)sender
 {
+    NSError *error = nil;
+    NSString *username = self.idInput.text;
+    NSString *password = self.passwordInput.text;
+    [STKeychain storeUsername:username andPassword:password forServiceName:@"5CSwipe" updateExisting:TRUE error:&error];
+    
+    
     NSString *javascript = [NSString stringWithFormat: @"document.getElementById('quickloginphrase').value='%@';" "document.getElementById('quickpassword').value='%@';" "document.getElementsByTagName('input')[4].click();", self.idInput.text, self.passwordInput.text];
     //[self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('quickloginphrase').value='40155049';" "document.getElementById('quickpassword').value='47238d7d';" "document.getElementsByTagName('input')[4].click();"];
     [self.webView stringByEvaluatingJavaScriptFromString:javascript];
