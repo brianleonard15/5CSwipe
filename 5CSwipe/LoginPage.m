@@ -176,5 +176,11 @@ NSString *mealsBalance;
 
 
 - (IBAction)checkButtonTapped:(UIButton *)sender {
+    sender.selected = !sender.selected;    // toggle button's selected state
+    if (sender.state == UIControlStateSelected) {
+        [sender setTitle:@"\u2610" forState:UIControlStateNormal];    // uncheck the button
+    } else {
+        [sender setTitle:@"\u2611" forState:UIControlStateSelected];    // check the button
+    }
 }
 @end
