@@ -15,5 +15,7 @@
 - (IBAction)buttonPress:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *idInput;
 @property (strong, nonatomic) IBOutlet UITextField *passwordInput;
+@property (strong, nonatomic) IBOutlet UIButton *checkBox;
+- (IBAction)checkButtonTapped:(UIButton *)sender;
 
 @end

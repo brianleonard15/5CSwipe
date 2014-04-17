@@ -62,9 +62,12 @@ NSString *mealsBalance;
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     NSError *error = nil;
-    NSString *username = @"40155049";
-    self.passwordInput.text = [STKeychain getPasswordForUsername:username andServiceName:@"5CSwipe" error:&error];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSString *savedUsername = [prefs stringForKey:@"username"];
+    self.idInput.text = savedUsername;
+    self.passwordInput.text = [STKeychain getPasswordForUsername:savedUsername andServiceName:@"5CSwipe" error:&error];
     
 }
 
@@ -81,6 +84,9 @@ NSString *mealsBalance;
     NSError *error = nil;
     NSString *username = self.idInput.text;
     NSString *password = self.passwordInput.text;
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:username forKey:@"username"];
+    [prefs synchronize];
     [STKeychain storeUsername:username andPassword:password forServiceName:@"5CSwipe" updateExisting:TRUE error:&error];
     
     
@@ -149,6 +155,15 @@ NSString *mealsBalance;
     return YES;
 }
 
+- (IBAction)checkButtonTapped:(UIButton*)sender {
+    sender.selected = !sender.selected;    // toggle button's selected state
+    if (sender.state == UIControlStateSelected) {
+        [sender setTitle:@"\u2610" forState:UIControlStateNormal];    // uncheck the button
+    } else {
+        [sender setTitle:@"\u2611" forState:UIControlStateSelected];    // check the button
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showTableView"]) {
@@ -160,4 +175,6 @@ NSString *mealsBalance;
 }
 
 
+- (IBAction)checkButtonTapped:(UIButton *)sender {
+}
 @end
