@@ -24,13 +24,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Core Graphics 101";
-    self.flexSection = [@[[NSString stringWithFormat:@"$%@ remaining", self.flex]] mutableCopy];
-    self.claremontCashSection = [@[[NSString stringWithFormat:@"$%@ remaining", self.claremontCash]] mutableCopy];
-    self.mealsSection = [@[[NSString stringWithFormat:@"%@ meals remaining", self.meals]] mutableCopy];
+    self.title = @"Balances";
+    self.flexSection = [@[[NSString stringWithFormat:@"$%@", self.flex]] mutableCopy];
+    self.claremontCashSection = [@[[NSString stringWithFormat:@"$%@", self.claremontCash]] mutableCopy];
+    self.mealsSection = [@[[NSString stringWithFormat:@"%@", self.meals]] mutableCopy];
     
     UIImageView * background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_bg.jpg"]];
     self.tableView.backgroundView = background;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -114,6 +122,7 @@
         ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == self.mealsSection.count - 1;
     }
     cell.textLabel.text = entry;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.highlightedTextColor = [UIColor blackColor];
     
@@ -131,6 +140,10 @@
         return @"Meals";
     }
     
+}
+
+- (IBAction)logoutButton:(UIBarButtonItem *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
