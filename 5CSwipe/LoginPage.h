@@ -19,5 +19,6 @@
 - (IBAction)checkButtonTapped:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UILabel *incorrectLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *check;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
