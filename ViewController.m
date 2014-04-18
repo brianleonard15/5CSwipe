@@ -26,6 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
 }
 
@@ -60,7 +66,7 @@
     
     // Configure the cell...
     
-    UILabel *balance = (UILabel*) [cell viewWithTag:0];
+    UILabel *balance = (UILabel*) [cell viewWithTag:50];
 
         switch (indexPath.row) {
             case 0:
