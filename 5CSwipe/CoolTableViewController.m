@@ -29,8 +29,8 @@
     self.claremontCashSection = [@[[NSString stringWithFormat:@"$%@", self.claremontCash]] mutableCopy];
     self.mealsSection = [@[[NSString stringWithFormat:@"%@", self.meals]] mutableCopy];
     
-    UIImageView * background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_bg.jpg"]];
-    self.tableView.backgroundView = background;
+    UIImageView * background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.jpg"]];
+    self.myTableView.backgroundView = background;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,6 +39,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -105,6 +106,7 @@
         cell.selectedBackgroundView = selectedBackgroundCell;
     }
     
+    
     NSString * entry;
     
     if (indexPath.section == 0) {
@@ -122,9 +124,11 @@
         ((CustomCellBackground *)cell.selectedBackgroundView).lastCell = indexPath.row == self.mealsSection.count - 1;
     }
     cell.textLabel.text = entry;
+    cell.textLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:23];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.highlightedTextColor = [UIColor blackColor];
+    
     
     return cell;
 }
@@ -142,7 +146,7 @@
     
 }
 
-- (IBAction)logoutButton:(UIBarButtonItem *)sender {
+- (IBAction)logoutButton:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

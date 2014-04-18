@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CoolTableViewController : UITableViewController
+@interface CoolTableViewController : UIViewController
 
-- (IBAction)logoutButton:(UIBarButtonItem *)sender;
 @property (nonatomic, strong) NSString *flex;
 @property (nonatomic, strong) NSString *claremontCash;
 @property (nonatomic, strong) NSString *meals;
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+- (IBAction)logoutButton:(UIButton *)sender;
 
 @end

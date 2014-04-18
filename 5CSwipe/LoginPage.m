@@ -36,6 +36,7 @@ NSString *mealsBalance;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.loginButton.enabled = NO;
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -176,6 +177,7 @@ NSString *mealsBalance;
 {
     
     //Has fully loaded, do whatever you want here
+    self.loginButton.enabled = YES;
     NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
     if ([currentURL rangeOfString:@"https://cards.cuc.claremont.edu/login.php"].location == NSNotFound)
     {
@@ -192,6 +194,11 @@ NSString *mealsBalance;
         claremontCashBalance = [html substringWithRange:claremontCashRange];
         NSString *mealsBalanceTemp = [html substringWithRange:mealsRange];
         mealsBalance = [mealsBalanceTemp stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [mealsBalanceTemp length])];
+        
+        NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
+        [self.webView loadRequest:urlRequest];
+
         [self performSegueWithIdentifier:@"showTableView" sender:self];
     }
     else {
