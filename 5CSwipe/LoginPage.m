@@ -13,7 +13,6 @@
 
 @interface LoginPage () {
     
-int numberFinishes;
 NSString *flexBalance;
 NSString *claremontCashBalance;
 NSString *mealsBalance;
@@ -35,26 +34,36 @@ NSString *mealsBalance;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    numberFinishes = 0;
-    self.loginButton.layer.cornerRadius = 5;
-    self.loginButton.layer.borderWidth = 1;
-    self.loginButton.layer.borderColor = [UIColor colorWithRed:0 green:124.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    self.checkBox.layer.cornerRadius = 5;
+    self.checkBox.layer.borderWidth = 1;
+    self.checkBox.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.loginButton.layer.cornerRadius = 6;
+    self.loginButton.layer.borderWidth = 2;
+    self.loginButton.layer.borderColor = [UIColor colorWithRed:10.0/255.0 green:72.0/255.0 blue:93.0/255.0 alpha:1.0].CGColor;
+    UIGraphicsBeginImageContext(self.loginButton.frame.size);
+    [[UIImage imageNamed:@"loginButton.png"] drawInRect:self.loginButton.bounds];
+    UIImage *loginImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.loginButton.backgroundColor = [UIColor colorWithPatternImage:loginImage];
     self.idInput.delegate = self;
     self.passwordInput.delegate = self;
     self.webView.hidden = YES;
     self.webView.delegate = self;
     self.idInput.layer.cornerRadius = 8;
     self.idInput.layer.borderWidth = 1.0f;
-    self.idInput.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.idInput.layer.borderColor = [[UIColor whiteColor] CGColor];
     UIColor *placeholderColor =[UIColor grayColor];
     self.idInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Student ID" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     self.passwordInput.layer.cornerRadius = 8;
     self.passwordInput.layer.borderWidth = 1.0f;
-    self.passwordInput.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.passwordInput.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.passwordInput.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
-    NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
-    [self.webView loadRequest:urlRequest];
 
 
     // Do any additional setup after loading the view.
@@ -63,11 +72,30 @@ NSString *mealsBalance;
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    NSError *error = nil;
+    self.incorrectLabel.hidden = YES;
+    
+    NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
+    [self.webView loadRequest:urlRequest];
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSString *savedUsername = [prefs stringForKey:@"username"];
-    self.idInput.text = savedUsername;
-    self.passwordInput.text = [STKeychain getPasswordForUsername:savedUsername andServiceName:@"5CSwipe" error:&error];
+    NSString *rememberState = [prefs stringForKey:@"rememberState"];
+    
+    if ([rememberState isEqualToString:@"Remember"]) {
+        NSError *error = nil;
+        NSString *savedUsername = [prefs stringForKey:@"username"];
+        self.idInput.text = savedUsername;
+        self.passwordInput.text = [STKeychain getPasswordForUsername:savedUsername andServiceName:@"5CSwipe" error:&error];
+        [self.checkBox setSelected:YES];
+        self.check.hidden = NO;
+    }
+    else
+    {
+        [self.checkBox setSelected:NO];
+        self.check.hidden = YES;
+        self.idInput.text = nil;
+        self.passwordInput.text = nil;
+    }
     
 }
 
@@ -81,29 +109,36 @@ NSString *mealsBalance;
 
 - (IBAction)buttonPress:(id)sender
 {
+
     NSError *error = nil;
     NSString *username = self.idInput.text;
     NSString *password = self.passwordInput.text;
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:username forKey:@"username"];
-    [prefs synchronize];
-    [STKeychain storeUsername:username andPassword:password forServiceName:@"5CSwipe" updateExisting:TRUE error:&error];
+    
+    if (!self.check.hidden)
+    {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:username forKey:@"username"];
+        [prefs synchronize];
+        [STKeychain storeUsername:username andPassword:password forServiceName:@"5CSwipe" updateExisting:TRUE error:&error];
+    }
+    else
+    {
+        [STKeychain deleteItemForUsername:username andServiceName:@"5CSwipe" error:&error];
+    }
     
     
-    NSString *javascript = [NSString stringWithFormat: @"document.getElementById('quickloginphrase').value='%@';" "document.getElementById('quickpassword').value='%@';" "document.getElementsByTagName('input')[4].click();", self.idInput.text, self.passwordInput.text];
-    //[self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('quickloginphrase').value='40155049';" "document.getElementById('quickpassword').value='47238d7d';" "document.getElementsByTagName('input')[4].click();"];
+    NSString *javascript = [NSString stringWithFormat: @"document.getElementById('loginphrase').value='%@';" "document.getElementById('password').value='%@';" "document.getElementsByTagName('input')[0].click();" "document.getElementsByTagName('input')[6].click();", self.idInput.text, self.passwordInput.text];
     [self.webView stringByEvaluatingJavaScriptFromString:javascript];
     
 }
 
 -(void) webViewDidFinishLoad:(UIWebView *)webView
 {
-    //NSString *javaScript = @"function myFunction(){return 1+1;}";
-    //[webView stringByEvaluatingJavaScriptFromString:javaScript];
     
     //Has fully loaded, do whatever you want here
-    ++ numberFinishes;
-    if (numberFinishes > 3) {
+    NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
+    if ([currentURL rangeOfString:@"https://cards.cuc.claremont.edu/login.php"].location == NSNotFound)
+    {
         NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
         NSRange flexStartRange = [self rangeOfString:@"Current Balance: " inString:html atOccurence:1];
         NSRange claremontCashStartRange = [self rangeOfString:@"Current Balance: " inString:html atOccurence:2];
@@ -117,8 +152,18 @@ NSString *mealsBalance;
         claremontCashBalance = [html substringWithRange:claremontCashRange];
         NSString *mealsBalanceTemp = [html substringWithRange:mealsRange];
         mealsBalance = [mealsBalanceTemp stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [mealsBalanceTemp length])];
-        NSLog(@"Flex: %@, Claremont Cash: %@, Meals: %@", flexBalance, claremontCashBalance, mealsBalance);
         [self performSegueWithIdentifier:@"showTableView" sender:self];
+    }
+    else {
+        NSString *wrongHtml = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
+        if ([wrongHtml rangeOfString:@"Invalid login"].location != NSNotFound)
+        {
+            self.incorrectLabel.hidden = NO;
+        }
+        else
+        {
+            self.incorrectLabel.hidden = YES;
+        }
     }
 }
 
@@ -156,13 +201,23 @@ NSString *mealsBalance;
 }
 
 - (IBAction)checkButtonTapped:(UIButton*)sender {
-    sender.selected = !sender.selected;    // toggle button's selected state
-    if (sender.state == UIControlStateSelected) {
-        [sender setTitle:@"\u2610" forState:UIControlStateNormal];    // uncheck the button
-    } else {
-        [sender setTitle:@"\u2611" forState:UIControlStateSelected];    // check the button
+    if([sender isSelected]){
+        self.check.hidden = YES;
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:@"Forget" forKey:@"rememberState"];
+        [prefs synchronize];
+        [sender setSelected:NO];
+    }
+    else
+    {
+        self.check.hidden = NO;
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:@"Remember" forKey:@"rememberState"];
+        [prefs synchronize];
+        [sender setSelected:YES];
     }
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -174,13 +229,4 @@ NSString *mealsBalance;
     }
 }
 
-
-- (IBAction)checkButtonTapped:(UIButton *)sender {
-    sender.selected = !sender.selected;    // toggle button's selected state
-    if (sender.state == UIControlStateSelected) {
-        [sender setTitle:@"\u2610" forState:UIControlStateNormal];    // uncheck the button
-    } else {
-        [sender setTitle:@"\u2611" forState:UIControlStateSelected];    // check the button
-    }
-}
 @end

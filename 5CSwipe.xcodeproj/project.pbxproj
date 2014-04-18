@@ -24,6 +24,10 @@
 		D72FA2FF18FE822A00E3ACC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FA2FE18FE822A00E3ACC6 /* ViewController.m */; };
 		D72FA30418FF398D00E3ACC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72FA30318FF398D00E3ACC6 /* Security.framework */; };
 		D72FA30D18FF755900E3ACC6 /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FA30C18FF755900E3ACC6 /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7433F221900B6C200685A58 /* 5CSwipe-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7433F211900B6C200685A58 /* 5CSwipe-Info.plist */; };
+		D7433F241900B6D100685A58 /* whiteCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = D7433F231900B6D100685A58 /* whiteCheck.png */; };
+		D7433F261900B6FC00685A58 /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7433F251900B6FC00685A58 /* loginButton.png */; };
+		D7433F281900B70F00685A58 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7433F271900B70F00685A58 /* background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,6 @@
 		D72FA2BD18FE7F4400E3ACC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D72FA2BF18FE7F4400E3ACC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D72FA2C118FE7F4400E3ACC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D72FA2C518FE7F4400E3ACC6 /* 5CSwipe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "5CSwipe-Info.plist"; sourceTree = "<group>"; };
 		D72FA2C718FE7F4400E3ACC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D72FA2C918FE7F4400E3ACC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D72FA2CB18FE7F4400E3ACC6 /* 5CSwipe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "5CSwipe-Prefix.pch"; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		D72FA2E618FE7F4500E3ACC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D72FA2E818FE7F4500E3ACC6 /* _CSwipeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _CSwipeTests.m; sourceTree = "<group>"; };
 		D72FA2F218FE7F6600E3ACC6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D72FA2F418FE7F7300E3ACC6 /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		D72FA2F518FE7F7300E3ACC6 /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		D72FA2FD18FE822A00E3ACC6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
 		D72FA2FE18FE822A00E3ACC6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
@@ -62,6 +64,11 @@
 		D72FA30B18FF755900E3ACC6 /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
 		D72FA30C18FF755900E3ACC6 /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		D72FA30E18FF776B00E3ACC6 /* STUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STUtils.h; sourceTree = "<group>"; };
+		D7433F201900A81C00685A58 /* LoginPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
+		D7433F211900B6C200685A58 /* 5CSwipe-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "5CSwipe-Info.plist"; sourceTree = "<group>"; };
+		D7433F231900B6D100685A58 /* whiteCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCheck.png; sourceTree = "<group>"; };
+		D7433F251900B6FC00685A58 /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
+		D7433F271900B70F00685A58 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +136,7 @@
 				D72FA30B18FF755900E3ACC6 /* STKeychain.h */,
 				D72FA30C18FF755900E3ACC6 /* STKeychain.m */,
 				D72FA2F218FE7F6600E3ACC6 /* Main.storyboard */,
-				D72FA2F418FE7F7300E3ACC6 /* LoginPage.h */,
+				D7433F201900A81C00685A58 /* LoginPage.h */,
 				D72FA2F518FE7F7300E3ACC6 /* LoginPage.m */,
 				D72FA2FD18FE822A00E3ACC6 /* ViewController.h */,
 				D72FA2FE18FE822A00E3ACC6 /* ViewController.m */,
@@ -142,7 +149,10 @@
 		D72FA2C418FE7F4400E3ACC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D72FA2C518FE7F4400E3ACC6 /* 5CSwipe-Info.plist */,
+				D7433F251900B6FC00685A58 /* loginButton.png */,
+				D7433F271900B70F00685A58 /* background.jpg */,
+				D7433F231900B6D100685A58 /* whiteCheck.png */,
+				D7433F211900B6C200685A58 /* 5CSwipe-Info.plist */,
 				D72FA2C618FE7F4400E3ACC6 /* InfoPlist.strings */,
 				D72FA2C918FE7F4400E3ACC6 /* main.m */,
 				D72FA2CB18FE7F4400E3ACC6 /* 5CSwipe-Prefix.pch */,
@@ -244,9 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7433F241900B6D100685A58 /* whiteCheck.png in Resources */,
 				D72FA2D618FE7F4400E3ACC6 /* Images.xcassets in Resources */,
 				D72FA2C818FE7F4400E3ACC6 /* InfoPlist.strings in Resources */,
 				D72FA2F318FE7F6600E3ACC6 /* Main.storyboard in Resources */,
+				D7433F221900B6C200685A58 /* 5CSwipe-Info.plist in Resources */,
+				D7433F281900B70F00685A58 /* background.jpg in Resources */,
+				D7433F261900B6FC00685A58 /* loginButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +480,7 @@
 				D72FA2EE18FE7F4500E3ACC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D72FA2EF18FE7F4500E3ACC6 /* Build configuration list for PBXNativeTarget "5CSwipeTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +489,7 @@
 				D72FA2F118FE7F4500E3ACC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

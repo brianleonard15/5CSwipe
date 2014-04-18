@@ -17,5 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordInput;
 @property (strong, nonatomic) IBOutlet UIButton *checkBox;
 - (IBAction)checkButtonTapped:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *incorrectLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *check;
 
 @end
