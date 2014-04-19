@@ -179,6 +179,7 @@ NSString *mealsBalance;
     //Has fully loaded, do whatever you want here
     self.loginButton.enabled = YES;
     NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
+    NSLog(@"%@", currentURL);
     if ([currentURL rangeOfString:@"https://cards.cuc.claremont.edu/login.php"].location == NSNotFound)
     {
         NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
