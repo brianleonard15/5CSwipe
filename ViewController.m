@@ -8,31 +8,60 @@
 
 #import "ViewController.h"
 
+#define FONT_CANDICE(s) [UIFont fontWithName:@"Candice" size:s]
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    NSString* s2 = @"5C Swipe";
+    NSMutableAttributedString* content2 =
+    [[NSMutableAttributedString alloc]
+     initWithString:s2
+     attributes:
+     @{
+       NSFontAttributeName:
+           FONT_CANDICE(50.0f)
+       }];
+    [content2 setAttributes:
+     @{
+       NSFontAttributeName:FONT_CANDICE(70.0f), NSBaselineOffsetAttributeName : @-4
+       } range:NSMakeRange(0,1)];
+    [content2 addAttributes:
+     @{
+       NSKernAttributeName:@-7
+       } range:NSMakeRange(0,1)];
+    
+    NSMutableParagraphStyle* para2 = [NSMutableParagraphStyle new];
+    para2.headIndent = 10;
+    para2.firstLineHeadIndent = 10;
+    para2.tailIndent = -10;
+    para2.lineBreakMode = NSLineBreakByWordWrapping;
+    para2.alignment = NSTextAlignmentJustified;
+    para2.lineHeightMultiple = 1.2;
+    para2.hyphenationFactor = 1.0;
+    [content2 addAttribute:NSParagraphStyleAttributeName
+                     value:para2 range:NSMakeRange(0,1)];
+    self.titleLabel.attributedText = content2;
+    
+    self.transparentButton.alpha = .7;
+    
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -41,47 +70,7 @@
 }
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 3;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"balanceCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    UILabel *balance = (UILabel*) [cell viewWithTag:50];
-
-        switch (indexPath.row) {
-            case 0:
-                balance.text = [NSString stringWithFormat:@"Flex: $%@", self.flex];
-                break;
-            case 1:
-                balance.text = [NSString stringWithFormat:@"Claremont Cash: $%@", self.claremontCash];
-                break;
-            case 2:
-                balance.text = [NSString stringWithFormat:@"Meals: %@", self.meals];
-                break;
-            default:
-                break;
-        }
-
-    
-    return cell;
-}
-
-
-- (IBAction)logoutButton:(UIBarButtonItem *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+- (IBAction)logoutButton:(UIButton *)sender {
+     [[self navigationController] popViewControllerAnimated:YES];
 }
 @end

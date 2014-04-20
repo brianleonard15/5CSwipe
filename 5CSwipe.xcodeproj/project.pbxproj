@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D72A9E9C19010BBF008E4BF1 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A9E9419010BBF008E4BF1 /* Common.m */; };
-		D72A9E9D19010BBF008E4BF1 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A9E9719010BBF008E4BF1 /* CustomCellBackground.m */; };
-		D72A9E9E19010BBF008E4BF1 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A9E9A19010BBF008E4BF1 /* CustomHeader.m */; };
-		D72A9E9F19010BBF008E4BF1 /* main_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D72A9E9B19010BBF008E4BF1 /* main_bg.jpg */; };
-		D72A9EA219010BD4008E4BF1 /* CoolTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A9EA019010BD4008E4BF1 /* CoolTableViewController.m */; };
-		D72A9EA319010BD4008E4BF1 /* CustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A9EA119010BD4008E4BF1 /* CustomFooter.m */; };
 		D72A9EA5190110F2008E4BF1 /* candy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D72A9EA419010DBF008E4BF1 /* candy.ttf */; };
 		D72FA2BE18FE7F4400E3ACC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72FA2BD18FE7F4400E3ACC6 /* Foundation.framework */; };
 		D72FA2C018FE7F4400E3ACC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72FA2BF18FE7F4400E3ACC6 /* CoreGraphics.framework */; };
@@ -31,6 +25,10 @@
 		D72FA2FF18FE822A00E3ACC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FA2FE18FE822A00E3ACC6 /* ViewController.m */; };
 		D72FA30418FF398D00E3ACC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72FA30318FF398D00E3ACC6 /* Security.framework */; };
 		D72FA30D18FF755900E3ACC6 /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D72FA30C18FF755900E3ACC6 /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D738656B190332EC00FFC5D7 /* clearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D738656A190332EB00FFC5D7 /* clearButton.png */; };
+		D738656D1903606C00FFC5D7 /* clearbutton2.png in Resources */ = {isa = PBXBuildFile; fileRef = D738656C1903606C00FFC5D7 /* clearbutton2.png */; };
+		D738656F190360EA00FFC5D7 /* clearButton3.png in Resources */ = {isa = PBXBuildFile; fileRef = D738656E190360EA00FFC5D7 /* clearButton3.png */; };
+		D73865771903758B00FFC5D7 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D73865761903758B00FFC5D7 /* blueButton.png */; };
 		D7433F241900B6D100685A58 /* whiteCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = D7433F231900B6D100685A58 /* whiteCheck.png */; };
 		D7433F281900B70F00685A58 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7433F271900B70F00685A58 /* background.jpg */; };
 		D7C642DA1900EBE500D6603D /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C642D91900EBE500D6603D /* loginButton.png */; };
@@ -47,17 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D72A9E9319010BBF008E4BF1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		D72A9E9419010BBF008E4BF1 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
-		D72A9E9519010BBF008E4BF1 /* CoolTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolTableViewController.h; sourceTree = "<group>"; };
-		D72A9E9619010BBF008E4BF1 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
-		D72A9E9719010BBF008E4BF1 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
-		D72A9E9819010BBF008E4BF1 /* CustomFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFooter.h; sourceTree = "<group>"; };
-		D72A9E9919010BBF008E4BF1 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
-		D72A9E9A19010BBF008E4BF1 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
-		D72A9E9B19010BBF008E4BF1 /* main_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_bg.jpg; sourceTree = "<group>"; };
-		D72A9EA019010BD4008E4BF1 /* CoolTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolTableViewController.m; sourceTree = "<group>"; };
-		D72A9EA119010BD4008E4BF1 /* CustomFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFooter.m; sourceTree = "<group>"; };
 		D72A9EA419010DBF008E4BF1 /* candy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = candy.ttf; sourceTree = "<group>"; };
 		D72FA2BA18FE7F4400E3ACC6 /* 5CSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5CSwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72FA2BD18FE7F4400E3ACC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +69,10 @@
 		D72FA30B18FF755900E3ACC6 /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
 		D72FA30C18FF755900E3ACC6 /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		D72FA30E18FF776B00E3ACC6 /* STUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STUtils.h; sourceTree = "<group>"; };
+		D738656A190332EB00FFC5D7 /* clearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearButton.png; sourceTree = "<group>"; };
+		D738656C1903606C00FFC5D7 /* clearbutton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearbutton2.png; sourceTree = "<group>"; };
+		D738656E190360EA00FFC5D7 /* clearButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearButton3.png; sourceTree = "<group>"; };
+		D73865761903758B00FFC5D7 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
 		D7433F201900A81C00685A58 /* LoginPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		D7433F211900B6C200685A58 /* 5CSwipe-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "5CSwipe-Info.plist"; sourceTree = "<group>"; };
 		D7433F231900B6D100685A58 /* whiteCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCheck.png; sourceTree = "<group>"; };
@@ -114,24 +105,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D72A9E811900FDEE008E4BF1 /* CoolTable */ = {
-			isa = PBXGroup;
-			children = (
-				D72A9E9319010BBF008E4BF1 /* Common.h */,
-				D72A9E9419010BBF008E4BF1 /* Common.m */,
-				D72A9E9519010BBF008E4BF1 /* CoolTableViewController.h */,
-				D72A9EA019010BD4008E4BF1 /* CoolTableViewController.m */,
-				D72A9E9619010BBF008E4BF1 /* CustomCellBackground.h */,
-				D72A9E9719010BBF008E4BF1 /* CustomCellBackground.m */,
-				D72A9E9819010BBF008E4BF1 /* CustomFooter.h */,
-				D72A9EA119010BD4008E4BF1 /* CustomFooter.m */,
-				D72A9E9919010BBF008E4BF1 /* CustomHeader.h */,
-				D72A9E9A19010BBF008E4BF1 /* CustomHeader.m */,
-				D72A9E9B19010BBF008E4BF1 /* main_bg.jpg */,
-			);
-			name = CoolTable;
-			sourceTree = "<group>";
-		};
 		D72FA2B118FE7F4400E3ACC6 = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +145,6 @@
 				D72FA30B18FF755900E3ACC6 /* STKeychain.h */,
 				D72FA30C18FF755900E3ACC6 /* STKeychain.m */,
 				D72FA2F218FE7F6600E3ACC6 /* Main.storyboard */,
-				D72A9E811900FDEE008E4BF1 /* CoolTable */,
 				D7433F201900A81C00685A58 /* LoginPage.h */,
 				D72FA2F518FE7F7300E3ACC6 /* LoginPage.m */,
 				D72FA2FD18FE822A00E3ACC6 /* ViewController.h */,
@@ -187,6 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				D72A9EA419010DBF008E4BF1 /* candy.ttf */,
+				D73865761903758B00FFC5D7 /* blueButton.png */,
+				D738656A190332EB00FFC5D7 /* clearButton.png */,
+				D738656C1903606C00FFC5D7 /* clearbutton2.png */,
+				D738656E190360EA00FFC5D7 /* clearButton3.png */,
 				D7433F271900B70F00685A58 /* background.jpg */,
 				D7C642D91900EBE500D6603D /* loginButton.png */,
 				D7433F231900B6D100685A58 /* whiteCheck.png */,
@@ -293,13 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C642DA1900EBE500D6603D /* loginButton.png in Resources */,
+				D73865771903758B00FFC5D7 /* blueButton.png in Resources */,
 				D7433F241900B6D100685A58 /* whiteCheck.png in Resources */,
+				D738656B190332EC00FFC5D7 /* clearButton.png in Resources */,
 				D72FA2D618FE7F4400E3ACC6 /* Images.xcassets in Resources */,
 				D72FA2C818FE7F4400E3ACC6 /* InfoPlist.strings in Resources */,
 				D72A9EA5190110F2008E4BF1 /* candy.ttf in Resources */,
-				D72A9E9F19010BBF008E4BF1 /* main_bg.jpg in Resources */,
 				D72FA2F318FE7F6600E3ACC6 /* Main.storyboard in Resources */,
 				D7433F281900B70F00685A58 /* background.jpg in Resources */,
+				D738656D1903606C00FFC5D7 /* clearbutton2.png in Resources */,
+				D738656F190360EA00FFC5D7 /* clearButton3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,15 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72A9E9C19010BBF008E4BF1 /* Common.m in Sources */,
 				D72FA2F618FE7F7300E3ACC6 /* LoginPage.m in Sources */,
 				D72FA30D18FF755900E3ACC6 /* STKeychain.m in Sources */,
 				D72FA2CE18FE7F4400E3ACC6 /* AppDelegate.m in Sources */,
 				D72FA2FF18FE822A00E3ACC6 /* ViewController.m in Sources */,
-				D72A9E9E19010BBF008E4BF1 /* CustomHeader.m in Sources */,
-				D72A9E9D19010BBF008E4BF1 /* CustomCellBackground.m in Sources */,
-				D72A9EA319010BD4008E4BF1 /* CustomFooter.m in Sources */,
-				D72A9EA219010BD4008E4BF1 /* CoolTableViewController.m in Sources */,
 				D72FA2CA18FE7F4400E3ACC6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface ViewController : UIViewController
 
-- (IBAction)logoutButton:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+- (IBAction)logoutButton:(UIButton *)sender;
 @property (nonatomic, strong) NSString *flex;
 @property (nonatomic, strong) NSString *claremontCash;
 @property (nonatomic, strong) NSString *meals;
+@property (strong, nonatomic) IBOutlet UIButton *transparentButton;
 
 @end
