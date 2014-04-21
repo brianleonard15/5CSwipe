@@ -18,6 +18,9 @@
 NSString *flexBalance;
 NSString *claremontCashBalance;
 NSString *mealsBalance;
+NSString *flexTable;
+NSString *claremontCashTable;
+NSString *mealsTable;
     
 }
 @end
@@ -177,12 +180,17 @@ NSString *mealsBalance;
 {
     
     //Has fully loaded, do whatever you want here
+    self.webView.scrollView.contentOffset = CGPointMake(100, 100);
     self.loginButton.enabled = YES;
     NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
     NSLog(@"%@", currentURL);
     if ([currentURL rangeOfString:@"https://cards.cuc.claremont.edu/login.php"].location == NSNotFound)
     {
         NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
+        flexTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[3].outerHTML;"];
+        claremontCashTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[4].outerHTML;"];
+        mealsTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[5].outerHTML;"];
+        NSLog(@"%@", flexTable);
         NSRange flexStartRange = [self rangeOfString:@"Current Balance: " inString:html atOccurence:1];
         NSRange claremontCashStartRange = [self rangeOfString:@"Current Balance: " inString:html atOccurence:2];
         NSRange mealsEndRange = [self rangeOfString:@"</td>\n</tr>\n</tbody></table>\n<a" inString:html atOccurence:1];
@@ -274,6 +282,9 @@ NSString *mealsBalance;
         tableViewController.flex = flexBalance;
         tableViewController.claremontCash = claremontCashBalance;
         tableViewController.meals = mealsBalance;
+        tableViewController.flexHTML = flexTable;
+        tableViewController.claremontCashHTML = claremontCashTable;
+        tableViewController.mealsHTML = mealsTable;
     }
 }
 

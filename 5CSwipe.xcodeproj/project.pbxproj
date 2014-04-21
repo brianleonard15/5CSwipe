@@ -31,6 +31,8 @@
 		D73865771903758B00FFC5D7 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D73865761903758B00FFC5D7 /* blueButton.png */; };
 		D7433F241900B6D100685A58 /* whiteCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = D7433F231900B6D100685A58 /* whiteCheck.png */; };
 		D7433F281900B70F00685A58 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7433F271900B70F00685A58 /* background.jpg */; };
+		D7A316A91905B905008B61D7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D7A316A81905B905008B61D7 /* style.css */; };
+		D7A316AC1905BA7B008B61D7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A316AB1905BA7B008B61D7 /* DetailViewController.m */; };
 		D7C642DA1900EBE500D6603D /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C642D91900EBE500D6603D /* loginButton.png */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,9 @@
 		D7433F211900B6C200685A58 /* 5CSwipe-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "5CSwipe-Info.plist"; sourceTree = "<group>"; };
 		D7433F231900B6D100685A58 /* whiteCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCheck.png; sourceTree = "<group>"; };
 		D7433F271900B70F00685A58 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		D7A316A81905B905008B61D7 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		D7A316AA1905BA7B008B61D7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D7A316AB1905BA7B008B61D7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D7C642D91900EBE500D6603D /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +154,8 @@
 				D72FA2F518FE7F7300E3ACC6 /* LoginPage.m */,
 				D72FA2FD18FE822A00E3ACC6 /* ViewController.h */,
 				D72FA2FE18FE822A00E3ACC6 /* ViewController.m */,
+				D7A316AA1905BA7B008B61D7 /* DetailViewController.h */,
+				D7A316AB1905BA7B008B61D7 /* DetailViewController.m */,
 				D72FA2D518FE7F4400E3ACC6 /* Images.xcassets */,
 				D72FA2C418FE7F4400E3ACC6 /* Supporting Files */,
 			);
@@ -158,6 +165,7 @@
 		D72FA2C418FE7F4400E3ACC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7A316A81905B905008B61D7 /* style.css */,
 				D72A9EA419010DBF008E4BF1 /* candy.ttf */,
 				D73865761903758B00FFC5D7 /* blueButton.png */,
 				D738656A190332EB00FFC5D7 /* clearButton.png */,
@@ -269,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C642DA1900EBE500D6603D /* loginButton.png in Resources */,
+				D7A316A91905B905008B61D7 /* style.css in Resources */,
 				D73865771903758B00FFC5D7 /* blueButton.png in Resources */,
 				D7433F241900B6D100685A58 /* whiteCheck.png in Resources */,
 				D738656B190332EC00FFC5D7 /* clearButton.png in Resources */,
@@ -302,6 +311,7 @@
 				D72FA2CE18FE7F4400E3ACC6 /* AppDelegate.m in Sources */,
 				D72FA2FF18FE822A00E3ACC6 /* ViewController.m in Sources */,
 				D72FA2CA18FE7F4400E3ACC6 /* main.m in Sources */,
+				D7A316AC1905BA7B008B61D7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

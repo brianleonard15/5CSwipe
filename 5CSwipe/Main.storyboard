@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2Q-1e-Dnc">
-                                <rect key="frame" x="20" y="360" width="280" height="196"/>
+                                <rect key="frame" x="7" y="137" width="310" height="431"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-va-85W">
-                                <rect key="frame" x="66" y="459" width="189" height="50"/>
+                                <rect key="frame" x="66" y="503" width="189" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Logout" backgroundImage="loginButton.png">
@@ -236,7 +236,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.058823533359999999" green="0.38431376220000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="9M0-5L-N0K" firstAttribute="top" secondItem="eg0-va-85W" secondAttribute="bottom" constant="59" id="iGF-CL-gxe"/>
+                            <constraint firstItem="9M0-5L-N0K" firstAttribute="top" secondItem="eg0-va-85W" secondAttribute="bottom" constant="15" id="iGF-CL-gxe"/>
                             <constraint firstAttribute="centerX" secondItem="eg0-va-85W" secondAttribute="centerX" constant="-0.5" id="rjl-yG-ddG"/>
                         </constraints>
                     </view>
@@ -249,12 +249,41 @@
                         <outlet property="mealsButton" destination="xkN-Gi-B8b" id="P9X-BM-N4j"/>
                         <outlet property="mealsLabel" destination="ddS-eQ-f9l" id="Ltm-AV-qs6"/>
                         <outlet property="titleLabel" destination="Kbn-DC-Wpq" id="JHD-g6-heW"/>
-                        <outlet property="transparentButton" destination="Mus-Wu-96E" id="A1x-ru-s04"/>
+                        <segue destination="L1l-es-Iww" kind="push" identifier="pushDetailView" id="aME-CN-PHe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnD-JB-Ide" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="395" y="180"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="t0x-nK-Qmv">
+            <objects>
+                <viewController id="L1l-es-Iww" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9mL-d8-xab"/>
+                        <viewControllerLayoutGuide type="bottom" id="zIH-An-v6s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6hQ-2G-Q2p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-Rr-igX">
+                                <rect key="frame" x="5" y="87" width="311" height="394"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Rc-RJ-ShM"/>
+                    <connections>
+                        <outlet property="webView" destination="WNw-Rr-igX" id="Wsl-KF-08Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaH-Bg-Qgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="180"/>
         </scene>
     </scenes>
     <resources>

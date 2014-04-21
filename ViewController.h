@@ -15,6 +15,10 @@
 @property (nonatomic, strong) NSString *flex;
 @property (nonatomic, strong) NSString *claremontCash;
 @property (nonatomic, strong) NSString *meals;
+@property (nonatomic, strong) NSString *flexHTML;
+@property (nonatomic, strong) NSString *claremontCashHTML;
+@property (nonatomic, strong) NSString *mealsHTML;
+@property (nonatomic, strong) NSString *detailHTML;
 @property (strong, nonatomic) IBOutlet UILabel *flexLabel;
 @property (strong, nonatomic) IBOutlet UILabel *claremontCashLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mealsLabel;

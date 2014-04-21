@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
 
 #define FONT_CANDICE(s) [UIFont fontWithName:@"Candice" size:s]
 
@@ -62,9 +63,9 @@
     self.claremontCashButton.alpha = .7;
     self.mealsButton.alpha = .7;
     
-    self.flexLabel.text = self.flex;
-    self.claremontCashLabel.text = self.claremontCash;
-    self.mealsLabel.text = self.meals;
+    self.flexLabel.text = [NSString stringWithFormat:@"$%@",self.flex];
+    self.claremontCashLabel.text = [NSString stringWithFormat:@"$%@",self.claremontCash];
+    self.mealsLabel.text = [NSString stringWithFormat:@"%@",self.meals];
     
 }
 
@@ -80,11 +81,25 @@
      [[self navigationController] popViewControllerAnimated:YES];
 }
 - (IBAction)flexButtonPressed:(UIButton *)sender {
+    self.detailHTML = self.flexHTML;
+    [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
 - (IBAction)claremontCashButtonPressed:(UIButton *)sender {
+    self.detailHTML = self.claremontCashHTML;
+    [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
 - (IBAction)mealsButtonPressed:(UIButton *)sender {
+    self.detailHTML = self.mealsHTML;
+    [self performSegueWithIdentifier:@"pushDetailView" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"pushDetailView"]) {
+        DetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.detailHTML = [NSString stringWithFormat:@"<html> <head> <link rel='stylesheet' type='text/css'  href='style.css'> </head> <body> %@ </body> </html>", self.detailHTML];
+    }
 }
 @end
