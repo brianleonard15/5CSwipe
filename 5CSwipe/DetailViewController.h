@@ -10,6 +10,7 @@
 
 @interface DetailViewController : UIViewController <UIWebViewDelegate>
 
+- (IBAction)backButton:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) NSString *detailHTML;
 @end

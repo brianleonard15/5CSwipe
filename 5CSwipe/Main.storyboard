@@ -28,11 +28,11 @@
                         <viewControllerLayoutGuide type="bottom" id="XAs-Th-HJV"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="tys-1K-Dd0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2Q-1e-Dnc">
-                                <rect key="frame" x="7" y="137" width="310" height="431"/>
+                                <rect key="frame" x="7" y="137" width="310" height="343"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -130,11 +130,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9M0-5L-N0K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JDc-pH-8gu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-va-85W">
-                                <rect key="frame" x="66" y="503" width="189" height="50"/>
+                                <rect key="frame" x="66" y="415" width="189" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Logout" backgroundImage="loginButton.png">
@@ -147,37 +147,49 @@
                                     <action selector="logoutButton:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="tbw-rc-TbF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5C Swipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbn-DC-Wpq">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5C Swipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbn-DC-Wpq">
                                 <rect key="frame" x="33" y="20" width="284" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Bhq-Uk-ur3"/>
+                                    <constraint firstAttribute="width" constant="284" id="T1t-Pn-6G0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mus-Wu-96E">
-                                <rect key="frame" x="-14" y="31" width="187" height="407"/>
+                                <rect key="frame" x="91" y="247" width="139" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="clearButton3.png">
+                                <state key="normal" backgroundImage="clearbutton4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="flexButtonPressed:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="vXx-gJ-sma"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-yb-qrI">
-                                <rect key="frame" x="139" y="31" width="186" height="405"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-yb-qrI">
+                                <rect key="frame" x="161" y="111" width="139" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="clearButton3.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="aNW-vu-46k"/>
+                                    <constraint firstAttribute="width" constant="139" id="rvD-KO-kug"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="clearbutton4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="claremontCashButtonPressed:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="fx2-gO-i4M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Gi-B8b">
-                                <rect key="frame" x="49" y="181" width="206" height="464"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Gi-B8b">
+                                <rect key="frame" x="20" y="111" width="139" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="clearButton3.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="FSd-m9-zAa"/>
+                                    <constraint firstAttribute="height" constant="128" id="qPp-vf-EiZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="clearbutton4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -185,49 +197,61 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thA-zg-Sxa">
-                                <rect key="frame" x="33" y="124" width="106" height="39"/>
+                                <rect key="frame" x="36" y="124" width="106" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQR-SF-3Ft">
-                                <rect key="frame" x="107" y="286" width="106" height="39"/>
+                                <rect key="frame" x="107" y="261" width="106" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Claremont" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J7-sn-eqR">
-                                <rect key="frame" x="172" y="111" width="136" height="52"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claremont" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J7-sn-eqR">
+                                <rect key="frame" x="162" y="111" width="136" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="rtP-43-Mn7"/>
+                                    <constraint firstAttribute="width" constant="136" id="xkN-na-Ijp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cash" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Is-Iw-WfI">
-                                <rect key="frame" x="172" y="133" width="136" height="52"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Is-Iw-WfI">
+                                <rect key="frame" x="162" y="133" width="136" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="JMf-lQ-t5I"/>
+                                    <constraint firstAttribute="width" constant="136" id="ybI-GR-gf7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$2.15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTO-GI-8XD">
-                                <rect key="frame" x="49" y="171" width="74" height="46"/>
+                                <rect key="frame" x="33" y="171" width="106" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$2.15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-v6-8It">
-                                <rect key="frame" x="203" y="171" width="74" height="46"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2.15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-v6-8It">
+                                <rect key="frame" x="178" y="171" width="104" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Rje-D3-AC3"/>
+                                    <constraint firstAttribute="width" constant="104" id="b9D-4N-66j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddS-eQ-f9l">
-                                <rect key="frame" x="123" y="343" width="74" height="46"/>
+                                <rect key="frame" x="123" y="308" width="74" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,8 +260,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.058823533359999999" green="0.38431376220000002" blue="0.47058826679999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1J7-sn-eqR" secondAttribute="trailing" constant="22" id="0Bh-fx-Sa7"/>
+                            <constraint firstAttribute="centerX" secondItem="Kbn-DC-Wpq" secondAttribute="centerX" constant="-15" id="1yy-38-kwm"/>
+                            <constraint firstItem="xkN-Gi-B8b" firstAttribute="top" secondItem="JDc-pH-8gu" secondAttribute="top" constant="111" id="2fc-il-UJQ"/>
+                            <constraint firstAttribute="trailing" secondItem="BQX-v6-8It" secondAttribute="trailing" constant="38" id="AGo-EO-xiH"/>
+                            <constraint firstAttribute="trailing" secondItem="9Is-Iw-WfI" secondAttribute="trailing" constant="22" id="JwI-c5-ejY"/>
+                            <constraint firstItem="BQX-v6-8It" firstAttribute="top" secondItem="JDc-pH-8gu" secondAttribute="top" constant="171" id="d3k-7y-ddT"/>
+                            <constraint firstAttribute="trailing" secondItem="yhZ-yb-qrI" secondAttribute="trailing" constant="20" id="goB-ER-kCK"/>
                             <constraint firstItem="9M0-5L-N0K" firstAttribute="top" secondItem="eg0-va-85W" secondAttribute="bottom" constant="15" id="iGF-CL-gxe"/>
+                            <constraint firstItem="xkN-Gi-B8b" firstAttribute="leading" secondItem="JDc-pH-8gu" secondAttribute="leading" constant="20" id="obT-kP-pg3"/>
+                            <constraint firstItem="1J7-sn-eqR" firstAttribute="top" secondItem="JDc-pH-8gu" secondAttribute="top" constant="111" id="oxz-J1-HyH"/>
                             <constraint firstAttribute="centerX" secondItem="eg0-va-85W" secondAttribute="centerX" constant="-0.5" id="rjl-yG-ddG"/>
+                            <constraint firstItem="9Is-Iw-WfI" firstAttribute="top" secondItem="JDc-pH-8gu" secondAttribute="top" constant="133" id="trD-H0-f2n"/>
+                            <constraint firstItem="yhZ-yb-qrI" firstAttribute="top" secondItem="JDc-pH-8gu" secondAttribute="top" constant="111" id="tsP-jz-vbW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Balances" id="F5N-3s-ibR"/>
@@ -265,16 +300,38 @@
                         <viewControllerLayoutGuide type="bottom" id="zIH-An-v6s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6hQ-2G-Q2p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-Rr-igX">
-                                <rect key="frame" x="5" y="87" width="311" height="394"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-Rr-igX">
+                                <rect key="frame" x="20" y="28" width="280" height="374"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W79-dX-5uh">
+                                <rect key="frame" x="66" y="410" width="189" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                <state key="normal" title="Back" backgroundImage="loginButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="Login">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="L1l-es-Iww" eventType="touchUpInside" id="mOx-e7-RTp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zIH-An-v6s" firstAttribute="top" secondItem="W79-dX-5uh" secondAttribute="bottom" constant="20" id="2Ha-cV-Qa8"/>
+                            <constraint firstItem="WNw-Rr-igX" firstAttribute="top" secondItem="6hQ-2G-Q2p" secondAttribute="top" constant="28" id="3ni-Wp-l2D"/>
+                            <constraint firstAttribute="bottom" secondItem="WNw-Rr-igX" secondAttribute="bottom" constant="78" id="EED-l4-4gr"/>
+                            <constraint firstAttribute="centerX" secondItem="W79-dX-5uh" secondAttribute="centerX" constant="-0.5" id="T5i-dC-xzi"/>
+                            <constraint firstAttribute="trailing" secondItem="WNw-Rr-igX" secondAttribute="trailing" constant="20" id="abD-EE-B10"/>
+                            <constraint firstItem="WNw-Rr-igX" firstAttribute="leading" secondItem="6hQ-2G-Q2p" secondAttribute="leading" constant="20" id="rN8-Jx-uNP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Rc-RJ-ShM"/>
                     <connections>
@@ -287,13 +344,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clearButton3.png" width="320" height="568"/>
+        <image name="clearbutton4.png" width="248" height="182"/>
         <image name="loginButton.png" width="189" height="50"/>
         <image name="whiteCheck.png" width="100" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

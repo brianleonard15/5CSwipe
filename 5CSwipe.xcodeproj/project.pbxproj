@@ -33,6 +33,7 @@
 		D7433F281900B70F00685A58 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7433F271900B70F00685A58 /* background.jpg */; };
 		D7A316A91905B905008B61D7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D7A316A81905B905008B61D7 /* style.css */; };
 		D7A316AC1905BA7B008B61D7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A316AB1905BA7B008B61D7 /* DetailViewController.m */; };
+		D7A316AE1905C9F9008B61D7 /* clearbutton4.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A316AD1905C9F9008B61D7 /* clearbutton4.png */; };
 		D7C642DA1900EBE500D6603D /* loginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C642D91900EBE500D6603D /* loginButton.png */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		D7A316A81905B905008B61D7 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		D7A316AA1905BA7B008B61D7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D7A316AB1905BA7B008B61D7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D7A316AD1905C9F9008B61D7 /* clearbutton4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearbutton4.png; sourceTree = "<group>"; };
 		D7C642D91900EBE500D6603D /* loginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				D738656A190332EB00FFC5D7 /* clearButton.png */,
 				D738656C1903606C00FFC5D7 /* clearbutton2.png */,
 				D738656E190360EA00FFC5D7 /* clearButton3.png */,
+				D7A316AD1905C9F9008B61D7 /* clearbutton4.png */,
 				D7433F271900B70F00685A58 /* background.jpg */,
 				D7C642D91900EBE500D6603D /* loginButton.png */,
 				D7433F231900B6D100685A58 /* whiteCheck.png */,
@@ -281,6 +284,7 @@
 				D73865771903758B00FFC5D7 /* blueButton.png in Resources */,
 				D7433F241900B6D100685A58 /* whiteCheck.png in Resources */,
 				D738656B190332EC00FFC5D7 /* clearButton.png in Resources */,
+				D7A316AE1905C9F9008B61D7 /* clearbutton4.png in Resources */,
 				D72FA2D618FE7F4400E3ACC6 /* Images.xcassets in Resources */,
 				D72FA2C818FE7F4400E3ACC6 /* InfoPlist.strings in Resources */,
 				D72A9EA5190110F2008E4BF1 /* candy.ttf in Resources */,
