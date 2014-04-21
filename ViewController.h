@@ -15,6 +15,14 @@
 @property (nonatomic, strong) NSString *flex;
 @property (nonatomic, strong) NSString *claremontCash;
 @property (nonatomic, strong) NSString *meals;
-@property (strong, nonatomic) IBOutlet UIButton *transparentButton;
+@property (strong, nonatomic) IBOutlet UILabel *flexLabel;
+@property (strong, nonatomic) IBOutlet UILabel *claremontCashLabel;
+@property (strong, nonatomic) IBOutlet UILabel *mealsLabel;
+@property (strong, nonatomic) IBOutlet UIButton *flexButton;
+@property (strong, nonatomic) IBOutlet UIButton *claremontCashButton;
+@property (strong, nonatomic) IBOutlet UIButton *mealsButton;
+- (IBAction)flexButtonPressed:(UIButton *)sender;
+- (IBAction)claremontCashButtonPressed:(UIButton *)sender;
+- (IBAction)mealsButtonPressed:(UIButton *)sender;
 
 @end

@@ -160,6 +160,9 @@
                                 <state key="normal" backgroundImage="clearButton3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="flexButtonPressed:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="vXx-gJ-sma"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-yb-qrI">
                                 <rect key="frame" x="139" y="31" width="186" height="405"/>
@@ -167,6 +170,9 @@
                                 <state key="normal" backgroundImage="clearButton3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="claremontCashButtonPressed:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="fx2-gO-i4M"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkN-Gi-B8b">
                                 <rect key="frame" x="49" y="181" width="206" height="464"/>
@@ -174,6 +180,9 @@
                                 <state key="normal" backgroundImage="clearButton3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mealsButtonPressed:" destination="BpJ-KR-Z6t" eventType="touchUpInside" id="PdS-2l-Wob"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thA-zg-Sxa">
                                 <rect key="frame" x="33" y="124" width="106" height="39"/>
@@ -233,6 +242,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Balances" id="F5N-3s-ibR"/>
                     <connections>
+                        <outlet property="claremontCashButton" destination="yhZ-yb-qrI" id="2e8-Vd-l8p"/>
+                        <outlet property="claremontCashLabel" destination="BQX-v6-8It" id="bBj-GU-rsg"/>
+                        <outlet property="flexButton" destination="Mus-Wu-96E" id="aKf-T4-tOS"/>
+                        <outlet property="flexLabel" destination="PTO-GI-8XD" id="yLF-AR-tXg"/>
+                        <outlet property="mealsButton" destination="xkN-Gi-B8b" id="P9X-BM-N4j"/>
+                        <outlet property="mealsLabel" destination="ddS-eQ-f9l" id="Ltm-AV-qs6"/>
                         <outlet property="titleLabel" destination="Kbn-DC-Wpq" id="JHD-g6-heW"/>
                         <outlet property="transparentButton" destination="Mus-Wu-96E" id="A1x-ru-s04"/>
                     </connections>

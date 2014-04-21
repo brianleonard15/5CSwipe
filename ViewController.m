@@ -58,7 +58,13 @@
                      value:para2 range:NSMakeRange(0,1)];
     self.titleLabel.attributedText = content2;
     
-    self.transparentButton.alpha = .7;
+    self.flexButton.alpha = .7;
+    self.claremontCashButton.alpha = .7;
+    self.mealsButton.alpha = .7;
+    
+    self.flexLabel.text = self.flex;
+    self.claremontCashLabel.text = self.claremontCash;
+    self.mealsLabel.text = self.meals;
     
 }
 
@@ -72,5 +78,13 @@
 
 - (IBAction)logoutButton:(UIButton *)sender {
      [[self navigationController] popViewControllerAnimated:YES];
+}
+- (IBAction)flexButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)claremontCashButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)mealsButtonPressed:(UIButton *)sender {
 }
 @end
