@@ -394,12 +394,12 @@
                                     <action selector="backButton:" destination="L1l-es-Iww" eventType="touchUpInside" id="mOx-e7-RTp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Flex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H94-gD-upz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H94-gD-upz">
                                 <rect key="frame" x="20" y="20" width="440" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="284" id="Xek-LG-NMi"/>
-                                    <constraint firstAttribute="width" constant="284" id="hBO-7H-zVR"/>
+                                    <constraint firstAttribute="width" constant="440" id="hBO-7H-zVR"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="68" id="qkG-3R-vwn"/>
                                     <constraint firstAttribute="height" constant="68" id="rfW-qA-GDk"/>
                                 </constraints>
@@ -415,7 +415,7 @@
                             <constraint firstItem="W79-dX-5uh" firstAttribute="top" secondItem="WNw-Rr-igX" secondAttribute="bottom" constant="8" id="N4V-T9-JHJ"/>
                             <constraint firstAttribute="centerX" secondItem="W79-dX-5uh" secondAttribute="centerX" constant="-0.5" id="T5i-dC-xzi"/>
                             <constraint firstItem="WNw-Rr-igX" firstAttribute="top" secondItem="H94-gD-upz" secondAttribute="bottom" constant="-12" id="Ulu-hM-iwk"/>
-                            <constraint firstAttribute="centerX" secondItem="H94-gD-upz" secondAttribute="centerX" constant="-7" id="czk-5R-Buy"/>
+                            <constraint firstAttribute="centerX" secondItem="H94-gD-upz" secondAttribute="centerX" id="czk-5R-Buy"/>
                             <constraint firstItem="WNw-Rr-igX" firstAttribute="top" secondItem="H94-gD-upz" secondAttribute="bottom" constant="-12" id="lg9-Nh-XJP"/>
                             <constraint firstAttribute="centerX" secondItem="WNw-Rr-igX" secondAttribute="centerX" id="wUh-gP-Ktl"/>
                         </constraints>

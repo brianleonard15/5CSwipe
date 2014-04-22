@@ -21,6 +21,7 @@ NSString *mealsBalance;
 NSString *flexTable;
 NSString *claremontCashTable;
 NSString *mealsTable;
+    BOOL loginOccurred;
     
 }
 @end
@@ -36,9 +37,11 @@ NSString *mealsTable;
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    loginOccurred = NO;
     self.loginButton.enabled = NO;
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
@@ -116,6 +119,7 @@ NSString *mealsTable;
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    loginOccurred = NO;
     self.incorrectLabel.hidden = YES;
     
     NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
@@ -180,13 +184,13 @@ NSString *mealsTable;
 {
     
     //Has fully loaded, do whatever you want here
-    self.webView.scrollView.contentOffset = CGPointMake(100, 100);
     self.loginButton.enabled = YES;
     NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
+    NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
     NSLog(@"%@", currentURL);
-    if ([currentURL rangeOfString:@"https://cards.cuc.claremont.edu/login.php"].location == NSNotFound)
+    if ([html rangeOfString:@"Log Out"].location != NSNotFound && !loginOccurred)
     {
-        NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
+        loginOccurred = YES;
         flexTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[3].outerHTML;"];
         claremontCashTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[4].outerHTML;"];
         mealsTable = [webView stringByEvaluatingJavaScriptFromString: @"document.getElementsByTagName('table')[7].getElementsByTagName('table')[5].outerHTML;"];
@@ -203,9 +207,7 @@ NSString *mealsTable;
         NSString *mealsBalanceTemp = [html substringWithRange:mealsRange];
         mealsBalance = [mealsBalanceTemp stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [mealsBalanceTemp length])];
         
-        NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
-        [self.webView loadRequest:urlRequest];
+        [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('a')[25].click();"];
 
         [self performSegueWithIdentifier:@"showTableView" sender:self];
     }
