@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *claremontCashHTML;
 @property (nonatomic, strong) NSString *mealsHTML;
 @property (nonatomic, strong) NSString *detailHTML;
+@property (nonatomic, strong) NSString *typePressed;
 @property (strong, nonatomic) IBOutlet UILabel *flexLabel;
 @property (strong, nonatomic) IBOutlet UILabel *claremontCashLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mealsLabel;

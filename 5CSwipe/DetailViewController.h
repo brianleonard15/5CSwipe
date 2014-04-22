@@ -12,5 +12,7 @@
 
 - (IBAction)backButton:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) NSString *detailHTML;
+@property (nonatomic, strong) NSString *typePressed;
 @end

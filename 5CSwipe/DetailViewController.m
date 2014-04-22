@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.titleLabel.text = self.typePressed;
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"background.jpg"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -42,6 +43,9 @@
     self.webView.delegate = self;
     loadHTML = [NSString stringWithFormat:@"<html> <head> <link rel='stylesheet' type='text/css'  href='style.css'> </head> <body> %@ </body> </html>", self.detailHTML];
     loadHTML2 = [NSString stringWithFormat:@"<html> <head> <link rel='stylesheet' type='text/css'  href='style2.css'> </head> <body> %@ </body> </html>", self.detailHTML];
+    NSLog(@"%@", loadHTML);
+    loadHTML = [loadHTML stringByReplacingOccurrencesOfString:@"390" withString:@"100%"];
+    loadHTML2 = [loadHTML2 stringByReplacingOccurrencesOfString:@"390" withString:@"100%"];
     path = [[NSBundle mainBundle] bundlePath];
     baseURL = [NSURL fileURLWithPath:path];
     BOOL isInPortrait = UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation]);
@@ -64,7 +68,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self.webView stringByEvaluatingJavaScriptFromString:@"document. body.style.zoom = 0.7;"];
+    //[self.webView stringByEvaluatingJavaScriptFromString:@"document. body.style.zoom = 0.7;"];
     [self.webView setOpaque:NO];
 }
 /*

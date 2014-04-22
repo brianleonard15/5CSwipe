@@ -82,16 +82,19 @@
 }
 - (IBAction)flexButtonPressed:(UIButton *)sender {
     self.detailHTML = self.flexHTML;
+    self.typePressed = @"Flex";
     [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
 - (IBAction)claremontCashButtonPressed:(UIButton *)sender {
     self.detailHTML = self.claremontCashHTML;
+    self.typePressed = @"Claremont Cash";
     [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
 - (IBAction)mealsButtonPressed:(UIButton *)sender {
     self.detailHTML = self.mealsHTML;
+    self.typePressed = @"Meals";
     [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
@@ -100,6 +103,7 @@
     if ([segue.identifier isEqualToString:@"pushDetailView"]) {
         DetailViewController *detailViewController = segue.destinationViewController;
         detailViewController.detailHTML = self.detailHTML;
+        detailViewController.typePressed = self.typePressed;
     }
 }
 @end
