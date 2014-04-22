@@ -99,7 +99,7 @@
     
     if ([segue.identifier isEqualToString:@"pushDetailView"]) {
         DetailViewController *detailViewController = segue.destinationViewController;
-        detailViewController.detailHTML = [NSString stringWithFormat:@"<html> <head> <link rel='stylesheet' type='text/css'  href='style.css'> </head> <body> %@ </body> </html>", self.detailHTML];
+        detailViewController.detailHTML = self.detailHTML;
     }
 }
 @end

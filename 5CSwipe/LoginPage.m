@@ -97,7 +97,7 @@ NSString *mealsTable;
 //    self.loginButton.backgroundColor = [UIColor colorWithPatternImage:loginImage];
     self.idInput.delegate = self;
     self.passwordInput.delegate = self;
-    self.webView.hidden = YES;
+    //self.webView.hidden = YES;
     self.webView.delegate = self;
     self.idInput.layer.cornerRadius = 8;
     self.idInput.layer.borderWidth = 1.0f;
