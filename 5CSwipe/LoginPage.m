@@ -22,6 +22,7 @@ NSString *flexTable;
 NSString *claremontCashTable;
 NSString *mealsTable;
     BOOL loginOccurred;
+    NSTimer *timer;
     
 }
 @end
@@ -36,6 +37,7 @@ NSString *mealsTable;
     }
     return self;
 }
+
 
 
 - (void)viewDidLoad
@@ -100,7 +102,7 @@ NSString *mealsTable;
 //    self.loginButton.backgroundColor = [UIColor colorWithPatternImage:loginImage];
     self.idInput.delegate = self;
     self.passwordInput.delegate = self;
-    //self.webView.hidden = YES;
+    self.webView.hidden = YES;
     self.webView.delegate = self;
     self.idInput.layer.cornerRadius = 8;
     self.idInput.layer.borderWidth = 1.0f;
@@ -121,6 +123,7 @@ NSString *mealsTable;
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     loginOccurred = NO;
     self.incorrectLabel.hidden = YES;
+    [self.myActivityView startAnimating];
     
     NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
@@ -157,7 +160,7 @@ NSString *mealsTable;
 
 - (IBAction)buttonPress:(id)sender
 {
-
+    [self.myActivityView startAnimating];
     NSError *error = nil;
     NSString *username = self.idInput.text;
     NSString *password = self.passwordInput.text;
@@ -187,6 +190,10 @@ NSString *mealsTable;
     self.loginButton.enabled = YES;
     NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
     NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
+    if ([html rangeOfString:@"Login"].location != NSNotFound)
+    {
+        [self.myActivityView stopAnimating];
+    }
     NSLog(@"%@", currentURL);
     if ([html rangeOfString:@"Log Out"].location != NSNotFound && !loginOccurred)
     {
@@ -208,7 +215,7 @@ NSString *mealsTable;
         mealsBalance = [mealsBalanceTemp stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [mealsBalanceTemp length])];
         
         [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('a')[25].click();"];
-
+        [self.myActivityView stopAnimating];
         [self performSegueWithIdentifier:@"showTableView" sender:self];
     }
     else {

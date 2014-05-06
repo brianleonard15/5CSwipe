@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *incorrectLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *check;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *myActivityView;
 
 @end
