@@ -50,6 +50,11 @@ NSString *mealsTable;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
 //    NSDictionary *fiveDict = [NSDictionary dictionaryWithObject: FONT_CANDICE(80.0f) forKey:NSFontAttributeName];
@@ -188,13 +193,13 @@ NSString *mealsTable;
     
     //Has fully loaded, do whatever you want here
     self.loginButton.enabled = YES;
-    NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
+    //NSString *currentURL = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
     NSString *html = [webView stringByEvaluatingJavaScriptFromString: @"document.body.innerHTML"];
     if ([html rangeOfString:@"Login"].location != NSNotFound)
     {
         [self.myActivityView stopAnimating];
     }
-    NSLog(@"%@", currentURL);
+    //NSLog(@"%@", currentURL);
     if ([html rangeOfString:@"Log Out"].location != NSNotFound && !loginOccurred)
     {
         loginOccurred = YES;
@@ -260,7 +265,11 @@ NSString *mealsTable;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    if (textField == self.passwordInput) {
+        [textField resignFirstResponder];
+    } else if (textField == self.idInput) {
+        [self.passwordInput becomeFirstResponder];
+    }
     return YES;
 }
 
@@ -280,6 +289,11 @@ NSString *mealsTable;
         [prefs synchronize];
         [sender setSelected:YES];
     }
+}
+
+-(void)dismissKeyboard {
+    [self.idInput resignFirstResponder];
+    [self.passwordInput resignFirstResponder];
 }
 
 
