@@ -130,7 +130,7 @@ NSString *mealsTable;
     self.incorrectLabel.hidden = YES;
     [self.myActivityView startAnimating];
     
-    NSURL *websiteUrl = [NSURL URLWithString:@"https://cards.cuc.claremont.edu/login.php"];
+    NSURL *websiteUrl = [NSURL URLWithString:@"http://cards.cuc.claremont.edu/login.php"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
     
