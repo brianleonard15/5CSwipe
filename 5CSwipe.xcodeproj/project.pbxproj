@@ -253,6 +253,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Brian Leonard";
 				TargetAttributes = {
+					D72FA2B918FE7F4400E3ACC6 = {
+						DevelopmentTeam = Q4G3385KDP;
+					};
 					D72FA2DA18FE7F4500E3ACC6 = {
 						TestTargetID = D72FA2B918FE7F4400E3ACC6;
 					};
@@ -436,10 +439,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "5CSwipe/5CSwipe-Prefix.pch";
 				INFOPLIST_FILE = "5CSwipe/5CSwipe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -449,10 +455,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "5CSwipe/5CSwipe-Prefix.pch";
 				INFOPLIST_FILE = "5CSwipe/5CSwipe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
